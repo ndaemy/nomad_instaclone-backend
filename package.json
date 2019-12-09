@@ -1,0 +1,21 @@
+{
+  "name": "nomad_instaclone-backend",
+  "version": "1.0.0",
+  "description": "Instagram clone with Express + Prisma",
+  "repository": "https://github.com/yuyaebean/nomad_instaclone-backend.git",
+  "author": "yuyaebean <yuyaebean@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "nodemon": "^2.0.1"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
