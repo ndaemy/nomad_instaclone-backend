@@ -5,11 +5,12 @@ type User {
   firstName: String
   lastName: String
   bio: String
+  followers: [User!]! @relation(name: "FollowRelation")
+  followings: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
-  followers: [User!]! @relation(name: "FollowRelation")
-  followings: [User!]! @relation(name: "FollowRelation")
+  rooms: [Room!]!
 }
 
 type Post {
@@ -30,13 +31,27 @@ type File {
 
 type Like {
   id: ID! @id
-  post: Post!
   user: User!
+  post: Post!
 }
 
 type Comment {
   id: ID! @id
   text: String!
-  post: Post!
   user: User!
+  post: Post!
+}
+
+type Room {
+  id: ID! @id
+  participants: [User!]!
+  messages: [Message!]!
+}
+
+type Message {
+  id: ID! @id
+  text: String!
+  from: User! @relation(name: "From")
+  to: User! @relation(name: "To")
+  room: Room!
 }
