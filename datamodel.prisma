@@ -5,6 +5,7 @@ type User {
   firstName: String
   lastName: String
   bio: String
+  emailSecret: String
   followers: [User!]! @relation(name: "FollowRelation")
   followings: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]!
