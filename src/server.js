@@ -2,8 +2,8 @@ import { GraphQLServer } from 'graphql-yoga';
 import dotenv from 'dotenv';
 import logger from 'morgan';
 
-import typeDefs from './graphql/typeDefs';
-import resolvers from './graphql/resolvers';
+import typeDefs from './typeDefs';
+import resolvers from './resolvers';
 
 // import configurations from dotenv
 dotenv.config();
