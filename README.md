@@ -4,7 +4,7 @@ Instagram clone with Express + Prisam
 
 ## User Stories
 
-- [ ] Create account
+- [x] Create account
 - [ ] Request secret
 - [ ] Confirm secret (Signin)
 - [ ] Like / Unlike a post
