@@ -4,6 +4,7 @@ import logger from 'morgan';
 
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
+import sendSecretMail from './utils/sendSecretMail';
 
 // import configurations from dotenv
 dotenv.config();

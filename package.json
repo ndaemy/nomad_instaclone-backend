@@ -6,6 +6,7 @@
   "author": "yuyaebean <yuyaebean@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3",
     "merge-graphql-schemas": "^1.7.3",
