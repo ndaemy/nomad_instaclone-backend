@@ -1,11 +1,27 @@
 import passport from 'passport';
-import JwtStrategy from 'passport-jwt';
+import dotenv from 'dotenv';
+import { Strategy, ExtractJwt } from 'passport-jwt';
+
+import { prisma } from '../../generated/prisma-client';
+
+dotenv.config();
 
 const jwtOptions = {
-  jwtFromRequest: JwtStrategy.ExtractJwt.fromAuthHeaderAsBearerToken(),
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.JWT_SECRET
 };
 
-const verifyUser = (payload, done) => {};
+const verifyUser = async (payload, done) => {
+  try {
+    const user = await prisma.user({ id: payload.id });
+    if (user) {
+      return done(null, user);
+    } else {
+      return done(null, false);
+    }
+  } catch (error) {
+    done(error, false);
+  }
+};
 
-passport.use(new JwtStrategy.Strategy(jwtOptions));
+passport.use(new Strategy(jwtOptions, verifyUser));
