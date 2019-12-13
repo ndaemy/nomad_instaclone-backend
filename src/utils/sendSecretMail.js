@@ -10,7 +10,7 @@ const sendSecretMail = (address, secret) => {
     from: 'admin@instaclone.com',
     to: address,
     subject: '🔒Email Confirm Secret from InstaClone',
-    html: `Hello! Your email confirm secret is ${secret}.<br />Copy & Paste on the web/app to confirm your email.`
+    html: `Hello! Your email confirm secret is <strong>${secret}</strong>.<br />Copy & Paste on the web/app to confirm your email.`
   };
 
   sendMail(email);
