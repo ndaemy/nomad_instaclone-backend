@@ -6,8 +6,8 @@ Instagram clone with Express + Prisam
 
 - [x] Create account
 - [x] Request secret
-- [ ] Confirm secret (Signin)
-- [ ] Like / Unlike a post
+- [x] Confirm secret (Signin)
+- [x] Like / Unlike a post
 - [ ] Comment on a post
 - [ ] Search by user
 - [ ] Search by location
