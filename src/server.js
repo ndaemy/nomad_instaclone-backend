@@ -6,15 +6,20 @@ import passport from 'passport';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
 import './utils/passport';
+import { authenticateJwt } from './utils/passport';
 
 // import configurations from dotenv
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
-const server = new GraphQLServer({ typeDefs, resolvers });
+const server = new GraphQLServer({
+  typeDefs,
+  resolvers,
+  context: ({ request }) => ({ request })
+});
 
 server.express.use(logger('dev'));
-server.express.use(passport.authenticate('jwt'));
+server.express.use(authenticateJwt);
 
 server.start({ port: PORT }, () =>
   console.log(`Server is now running on http://localhost:${PORT}!`)
