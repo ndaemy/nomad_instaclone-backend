@@ -1,6 +1,6 @@
-import generateSecret from '../../utils/generateSecret';
-import { prisma } from '../../../generated/prisma-client';
-import sendSecretMail from '../../utils/sendSecretMail';
+import generateSecret from '../../../utils/generateSecret';
+import { prisma } from '../../../../generated/prisma-client';
+import sendSecretMail from '../../../utils/sendSecretMail';
 
 export default {
   Mutation: {

@@ -1,5 +1,5 @@
-import { prisma } from '../../../generated/prisma-client';
-import generateJwt from '../../utils/generateJwt';
+import { prisma } from '../../../../generated/prisma-client';
+import generateJwt from '../../../utils/generateJwt';
 
 export default {
   Mutation: {
