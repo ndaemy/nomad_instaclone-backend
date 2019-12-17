@@ -10,11 +10,11 @@ Instagram clone with Express + Prisam
 - [x] Like / Unlike a post
 - [x] Comment on a post
 - [x] Search by user
-- [ ] Search by location
-- [ ] Follow user
-- [ ] Unfollow user
-- [ ] Edit my profile
-- [ ] See user profile
+- [x] Search by location
+- [x] Follow user
+- [x] Unfollow user
+- [x] Edit my profile
+- [x] See user profile
 - [ ] See the full post
 - [ ] Upload a photo
 - [ ] Edit / Delete the photo
