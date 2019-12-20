@@ -1,4 +1,4 @@
-import { prisma } from '../../../../generated/prisma-client';
+import { prisma } from '../../../generated/prisma-client';
 
 export default {
   User: {
@@ -21,6 +21,15 @@ export default {
       const { id: parentId } = parent;
       return await prisma.$exists.user({
         AND: [{ id: parentId }, { followers_some: { id: user.id } }]
+      });
+    }
+  },
+  Post: {
+    isLiked: async (parent, _, { request }) => {
+      const { user } = request;
+      const { id } = parent;
+      return await prisma.$exists.like({
+        AND: [{ user: { id: user.id } }, { post: { id } }]
       });
     }
   }
