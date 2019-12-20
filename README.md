@@ -15,7 +15,8 @@ Instagram clone with Express + Prisam
 - [x] Unfollow user
 - [x] Edit my profile
 - [x] See user profile
-- [ ] See the full post
+- [x] See my profile
+- [x] See the full post
 - [ ] Upload a photo
 - [ ] Edit / Delete the photo
 - [ ] See the feed
