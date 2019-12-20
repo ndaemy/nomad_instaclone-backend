@@ -11,10 +11,17 @@ export default {
         return `${parent.firstName} ${parent.lastName}`;
       }
     },
-    itsMe: (parent, _, { request }) => {
+    isSelf: (parent, _, { request }) => {
       const { user } = request;
       const { id: parentId } = parent;
       return user.id === parentId;
+    },
+    isFollowing: async (parent, _, { request }) => {
+      const { user } = request;
+      const { id: parentId } = parent;
+      return await prisma.$exists.user({
+        AND: [{ id: parentId }, { followers_some: { id: user.id } }]
+      });
     }
   }
 };
