@@ -1,6 +1,8 @@
 type FullPost {
   post: Post!
   comments: [Comment!]!
+  files: [File!]!
+  user: User!
   likeCount: Int!
 }
 

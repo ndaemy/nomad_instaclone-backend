@@ -20,3 +20,7 @@ Instagram clone with Express + Prisam
 - [ ] Upload a photo
 - [ ] Edit / Delete the photo
 - [ ] See the feed
+- [ ] See rooms
+- [ ] See room
+- [ ] Send private message
+- [ ] Receive message (Realtime)

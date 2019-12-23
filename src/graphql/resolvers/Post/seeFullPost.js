@@ -10,6 +10,8 @@ export default {
         .post({ id })
         .comments()
         .$fragment(COMMENT_FRAGMENT);
+      const files = await prisma.post({ id }).files();
+      const user = await prisma.post({ id }).user();
       const likeCount = await prisma
         .likesConnection({ where: { post: { id } } })
         .aggregate()
@@ -17,6 +19,8 @@ export default {
       return {
         post,
         comments,
+        files,
+        user,
         likeCount
       };
     }
