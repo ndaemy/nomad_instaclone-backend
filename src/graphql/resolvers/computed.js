@@ -31,6 +31,13 @@ export default {
       return await prisma.$exists.like({
         AND: [{ user: { id: user.id } }, { post: { id } }]
       });
-    }
+    },
+    likeCount: async parent =>
+      await prisma
+        .likesConnection({
+          where: { post: { id: parent.id } }
+        })
+        .aggregate()
+        .count()
   }
 };
