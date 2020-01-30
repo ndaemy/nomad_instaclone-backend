@@ -18,8 +18,8 @@ Instagram clone with Express + Prisam
 - [x] See my profile
 - [x] See the full post
 - [x] Upload a post
-- [ ] Edit / Delete the post
-- [ ] See the feed
+- [x] Edit / Delete the post
+- [x] See the feed
 - [ ] See rooms
 - [ ] See room
 - [ ] Send private message
