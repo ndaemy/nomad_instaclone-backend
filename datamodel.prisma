@@ -8,9 +8,9 @@ type User {
   emailSecret: String
   followers: [User!]! @relation(name: "FollowRelation")
   followings: [User!]! @relation(name: "FollowRelation")
-  posts: [Post!]!
-  likes: [Like!]!
-  comments: [Comment!]!
+  posts: [Post!]! @relation(onDelete: CASCADE)
+  likes: [Like!]! @relation(onDelete: CASCADE)
+  comments: [Comment!]! @relation(onDelete: CASCADE)
   rooms: [Room!]!
 }
 
@@ -19,9 +19,9 @@ type Post {
   location: String
   caption: String
   user: User!
-  files: [File!]!
-  likes: [Like!]!
-  comments: [Comment!]!
+  files: [File!]! @relation(onDelete: CASCADE)
+  likes: [Like!]! @relation(onDelete: CASCADE)
+  comments: [Comment!]! @relation(onDelete: CASCADE)
 }
 
 type File {
